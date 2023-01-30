@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = "When the Genius Bar needs help, they call you!"
+    @State private var messageString = "Namaste"
     var body: some View {
         
         VStack {
-            Group {
-                Text("I am a Text View")
-                Text("I am a Text View")
-                Text("I am a Text View")
-                Text("I am a Text View")
-                Text("I am a Text View")
-                Text("I am a Text View")
-                Text("I am a Text View")
-                Text("I am a Text View")
-                Text("I am a Text View")
-            }
-            .font(.title)
-            .fontWeight(.heavy)
-            
+
             Spacer()
+            
+            Image(systemName: "speaker.wave.2", variableValue: 0.51)
+                .resizable()
+                .scaledToFit()
+                .symbolRenderingMode(.multicolor)
+                .padding()
+                .background(Color(hue: 0.521, saturation: 0.299, brightness: 0.958))
+                .cornerRadius(30)
+                .shadow(color: .gray, radius: 30, x: 20, y: 20)
+                .overlay(
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(.teal, lineWidth: 1)
+                )
+                .padding()
             
             Text(messageString)
                 .font(.largeTitle)
