@@ -40,7 +40,7 @@ struct ContentView: View {
                 messageString = (messageString == message1 ? message2 : message1)
             }
             .buttonStyle(.borderedProminent)
-            
+             
         }
         .padding()
     }
