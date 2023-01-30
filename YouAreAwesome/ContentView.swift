@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var messageString = ""
     @State private var imageName = ""
     @State private var imageNumber = 0
+    @State private var messageNumber = 0
     var body: some View {
         
         VStack {
@@ -36,17 +37,17 @@ struct ContentView: View {
             Spacer()
             
             Button("Show Message") {
-                let message1 = "You are Awesome!"
-                let message2 = "You are Great!"
-                
-                // This is the action performed when the button is pressed
-//                if messageString == message1 {
-//                    messageString = message2
-//                } else {
-//                    messageString = message1
-//                }
-                messageString = (messageString == message1 ? message2 : message1)
-//                imageName = (imageName == "image0" ? "image1" : "image0")
+               let messages = ["You are Awesome",
+               "You are Great",
+               "You are Fantastic",
+               "Fabulous? That's You!",
+               "You Make Me Smile",
+               "When the Genius Bar Needs Help, They Call You!"]
+                messageString = messages[messageNumber]
+                messageNumber += 1
+                if messageNumber == messages.count {
+                    messageNumber = 0
+                }
                 
                 imageName = "image\(imageNumber)"
                 imageNumber = imageNumber + 1
