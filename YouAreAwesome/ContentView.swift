@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var messageString = ""
     @State private var imageName = ""
+    @State private var imageNumber = 0
     var body: some View {
         
         VStack {
@@ -45,7 +46,13 @@ struct ContentView: View {
 //                    messageString = message1
 //                }
                 messageString = (messageString == message1 ? message2 : message1)
-                imageName = (imageName == "image0" ? "image1" : "image0")
+//                imageName = (imageName == "image0" ? "image1" : "image0")
+                
+                imageName = "image\(imageNumber)"
+                imageNumber = imageNumber + 1
+                if imageNumber > 9 {
+                    imageNumber = 0
+                }
             }
             .buttonStyle(.borderedProminent)
              
